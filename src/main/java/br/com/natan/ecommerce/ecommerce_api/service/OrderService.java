@@ -1,0 +1,25 @@
+package br.com.natan.ecommerce.ecommerce_api.service;
+
+import java.util.List;
+
+import br.com.natan.ecommerce.ecommerce_api.model.Order;
+import br.com.natan.ecommerce.ecommerce_api.repository.OrderRepository;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class OrderService {
+  private final OrderRepository repo;
+
+  public OrderService(OrderRepository repo) {
+    this.repo = repo;
+  }
+
+  public List<Order> findAll() {
+    return repo.findAll();
+  }
+
+  public Order save(Order order) {
+    return repo.save(order);
+  }
+}
